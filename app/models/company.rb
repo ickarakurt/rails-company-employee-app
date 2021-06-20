@@ -5,7 +5,7 @@ class Company < ApplicationRecord
     has_many :sub_companies, class_name: "Company", foreign_key: "parent_id", dependent: :destroy
     belongs_to :parent, class_name: "Company", optional: true
 
-    has_many :employees
+    has_many :employees, dependent: :destroy
 
     def all_sub_companies(subs = [])
         subs += sub_companies
