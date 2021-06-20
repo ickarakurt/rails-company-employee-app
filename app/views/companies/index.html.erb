@@ -15,7 +15,7 @@
     <ul>
       <% @companies.each do |company| %> 
         <li>
-          <div><%= company.name %></div>
+          <div><%= company.name %> => <%=link_to('Show', company_path(company)) %></div>
         </li>
       <% end %>
     </ul>

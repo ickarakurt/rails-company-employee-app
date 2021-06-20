@@ -1,1 +1,10 @@
-<div><%= @company.name %></div>
+<div>Name: <%= @company.name %></div>
+<div>Sub companies:
+<ul>
+      <% @company.sub_companies.each do |company| %> 
+        <li>
+          <div><%= company.name %> => <%=link_to('Show', company_path(company)) %></div>
+        </li>
+      <% end %>
+    </ul>
+</div>

@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     end
 
     def create
-        cp = Company.create(name: params[:name])
+        cp = Company.create(name: params[:name], parent_id: params[:parent_id])
         redirect_to cp
     end
 

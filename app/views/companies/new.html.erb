@@ -1,5 +1,7 @@
 <%= form_with url: "/companies", method: :post do |form| %>
   <%= form.label :name, "Compony name:" %>
   <%= form.text_field :name %>
+  <%= form.label :parent_id, "Parent Company:" %>
+  <%= form.select :parent_id, options_from_collection_for_select(Company.all, 'id', 'name') %>
   <%= form.submit "Submit" %>
 <% end %>
