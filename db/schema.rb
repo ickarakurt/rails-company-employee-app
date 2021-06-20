@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(version: 2021_06_20_141601) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "companies_id"
-    t.index ["companies_id"], name: "index_employees_on_companies_id"
+    t.integer "company_id"
   end
 
   add_foreign_key "companies", "companies", column: "parent_id"
-  add_foreign_key "employees", "companies", column: "companies_id"
+  add_foreign_key "employees", "companies"
 end

@@ -1,5 +1,8 @@
-<%= form_with url: "/companies", method: :post do |form| %>
-  <%= form.label :name, "Compony name:" %>
+<%= form_for @company, :url => {:action => :create} do |form| %>
+  <% @company.errors.full_messages.each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  <%= form.label :name, "Company name:" %>
   <%= form.text_field :name %>
   <%= form.label :parent_id, "Parent Company:" %>
   <%= form.select :parent_id, options_from_collection_for_select(Company.all, 'id', 'name') %>

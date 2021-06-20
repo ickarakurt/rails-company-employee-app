@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to("Companies", companies_path) %></li>
+      <li><%= link_to("New Company", new_company_path) %></li>
+      <li><%= link_to("Employee", employees_path) %></li>
+      <li><%= link_to("New Employee", new_employee_path) %></li> 
+    </ul>
+    <hr/>
     <%= yield %>
   </body>
 </html>

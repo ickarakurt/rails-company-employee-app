@@ -1,0 +1,8 @@
+<ul>
+  <% @employees.each do |employee| %> 
+    <li>
+      <div><%= employee.name %> => <%=link_to('Show', employee_path(employee)) %> - <%= link_to "Delete", employee_path(employee), :confirm => "Are you sure?", :method => :delete %></div>
+    </li>
+  <% end %>
+</ul>
+  

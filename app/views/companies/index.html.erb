@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Shyftplan</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<%= form_with url: "/companies", method: :get do |form| %>
+  <%= form.label :employees_count, "Required amount of employees:" %>
+  <%= form.text_field :employees_count %>
+  <%= form.submit "Search" %>
+<% end %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<ul>
+  <% @companies.each do |company| %> 
+    <li>
+      <div><%= company.name %> => <%=link_to('Show', company_path(company)) %> - <%= link_to "Delete", company_path(company), :confirm => "Are you sure?", :method => :delete %></div>
+    </li>
+  <% end %>
+</ul>
 
-  <body>
-    <%= yield %>
-    <ul>
-      <% @companies.each do |company| %> 
-        <li>
-          <div><%= company.name %> => <%=link_to('Show', company_path(company)) %></div>
-        </li>
-      <% end %>
-    </ul>
-  </body>
-</html>
