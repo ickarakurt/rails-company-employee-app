@@ -1,24 +1,22 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Company Employee APP
 
-Things you may want to cover:
+![Heroku](http://heroku-badge.herokuapp.com/?app=rails-company-employee-app&style=flat) => https://rails-company-employee-app.herokuapp.com
 
-* Ruby version
 
-* System dependencies
+### How to run
 
-* Configuration
+Firstly, set ENV variables. After that,
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
 
-* How to run the test suite
+### Running Tests
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+```
+rails t
 
-* ...
+```
